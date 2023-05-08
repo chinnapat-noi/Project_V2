@@ -381,12 +381,13 @@ int food::return_NodeID(){
 
 int LLFood::LLreturn_NodeID(int get_NodeID){
 	food *t=hol;
-	int out_NodeID;
+	int out_NodeID = 0;
 	for(int i=0;i<size;i++){
 		out_NodeID=t->return_NodeID();
-		if(get_NodeID == out_NodeID) return out_NodeID;
+		if(get_NodeID == out_NodeID) out_NodeID = get_NodeID;
 		else t=t->move_next();
 	}
+      return out_NodeID; //Return 0 for defalut This function need to be run after check_NodeID(NodeID);
 }
 
 void food::edit_NodeID(int inNodeID){
@@ -455,12 +456,13 @@ int drinks::return_NodeID(){
 
 int LLDrinks::LLreturn_NodeID(int get_NodeID){
 	drinks *t=hol;
-	int out_NodeID;
+	int out_NodeID = 0;
 	for(int i=0;i<size;i++){
 		out_NodeID=t->return_NodeID();
-		if(get_NodeID == out_NodeID) return out_NodeID;
+		if(get_NodeID == out_NodeID) out_NodeID = get_NodeID;
 		else t=t->move_next();
 	}
+      return out_NodeID; //Return 0 for defalut This function need to be run after check_NodeID(NodeID);
 }
 
 void drinks::edit_NodeID(int inNodeID){
@@ -529,12 +531,13 @@ int dailyUse::return_NodeID(){
 
 int LLDai::LLreturn_NodeID(int get_NodeID){
 	dailyUse *t=hol;
-	int out_NodeID;
+	int out_NodeID = 0;
 	for(int i=0;i<size;i++){
 		out_NodeID=t->return_NodeID();
-		if(get_NodeID == out_NodeID) return out_NodeID;
+		if(get_NodeID == out_NodeID) out_NodeID = get_NodeID;
 		else t=t->move_next();
 	}
+      return out_NodeID; //Return 0 for defalut This function need to be run after check_NodeID(NodeID);
 }
 
 void dailyUse::edit_NodeID(int inNodeID){
@@ -603,12 +606,13 @@ int specificPurpose::return_NodeID(){
 
 int LLSpec::LLreturn_NodeID(int get_NodeID){
 	specificPurpose *t=hol;
-	int out_NodeID;
+	int out_NodeID = 0;
 	for(int i=0;i<size;i++){
 		out_NodeID=t->return_NodeID();
-		if(get_NodeID == out_NodeID) return out_NodeID;
+		if(get_NodeID == out_NodeID) out_NodeID = get_NodeID;
 		else t=t->move_next();
 	}
+      return out_NodeID; //Return 0 for defalut This function need to be run after check_NodeID(NodeID);
 }
 
 void specificPurpose::edit_NodeID(int inNodeID){
