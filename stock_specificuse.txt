@@ -1,1 +1,5 @@
-trinolone 02/20000 05/2012 651324 useonlymounth 20 05 4.5 ituseonlyoral
+trinolone 02/2000 05/2012 651324 useonlymouth 20 05 4.5 ituseonlyoral
+tylenol 01/2014 05/2020 713645 usewhenhaveanheadache 30 10 2.5 decreaseheadachesymptom
+lorsidin 03/2010 06/2015 146352 avoidpatientwhohaveananaphylactic 25 06 1.5 eatfordecreasehistamine
+motilium 10/2011 12/2015 243846 riskywithheartrhythmdisorderandcardiacarrest 40 26 10.0 usewhenhaveflatulence
+norgesic 08/2015 06/2020 451325 riskywithmyastheniagravis 15 10 3.5 sleepywhenuse

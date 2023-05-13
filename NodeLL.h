@@ -82,6 +82,9 @@ class food:public consumable{
 		int return_NodeID();
 		void edit_NodeID(int);
 		void set_next(food *);
+        double return_weightAll();
+        string return_mfg();
+        string return_exp();
 		//long re_NodeID();
 };
 /*drinks: consumable*/
@@ -100,6 +103,10 @@ class drinks:public consumable{
 		int return_NodeID();
 		void edit_NodeID(int);
 		void set_next(drinks *);
+        double return_weightAll();
+        double return_volumeAll();  
+        string return_mfg();
+        string return_exp();      
 		//long re_NodeID();
 };
 
@@ -130,12 +137,15 @@ class dailyUse:public appliance{
         dailyUse(string = "No Name", string = "No MFG", string = "No EXP", long = 0, string = "For non", double = 0.0, int = 0, int = 0, string = "No detail");
         ~dailyUse();
         void show_data();
-        void insert( dailyUse *&);
+        void insert(dailyUse *&);
         dailyUse* move_next();
 		//Son code
 		int return_NodeID();
 		void edit_NodeID(int);
 		void set_next(dailyUse *);
+        double return_weightAll();
+        string return_mfg();
+        string return_exp();
 		//long re_NodeID();
 };
 /*specificPurpose: appliance*/
@@ -154,6 +164,9 @@ class specificPurpose:public appliance{
 		int return_NodeID();
 		void edit_NodeID(int);
 		void set_next(specificPurpose *);
+        double return_weightAll();
+        string return_mfg();
+        string return_exp();
 		//long re_NodeID();
 };
 /*
@@ -215,7 +228,10 @@ public:
 	   void delete_stock(int);
 	   int LLreturn_NodeID(int);
 	   void LLedit_NodeID(int);
-	   
+       void sorting_by_NodeID();
+       void sorting_by_mfd();
+       void sorting_by_exp();
+       void sorting_by_weight();
 };
 /*LLDrinks*/
 class LLDrinks{
@@ -231,6 +247,11 @@ public:
 	   void delete_stock(int);
        int LLreturn_NodeID(int);
 	   void LLedit_NodeID(int);
+       void sorting_by_NodeID();
+       void sorting_by_mfd();
+       void sorting_by_exp();
+       void sorting_by_weight();
+       void sorting_by_volume();
 };
 
 /*LLDai*/
@@ -247,6 +268,10 @@ public:
 	   void delete_stock(int);
        int LLreturn_NodeID(int);
 	   void LLedit_NodeID(int);
+       void sorting_by_NodeID();
+       void sorting_by_mfd();
+       void sorting_by_exp();
+       void sorting_by_weight();
 };
 /*LLSpec*/
 class LLSpec{
@@ -262,6 +287,10 @@ public:
 	   void delete_stock(int);
        int LLreturn_NodeID(int);
 	   void LLedit_NodeID(int);
+       void sorting_by_NodeID();
+       void sorting_by_mfd();
+       void sorting_by_exp();
+       void sorting_by_weight();
 };
 
 #endif

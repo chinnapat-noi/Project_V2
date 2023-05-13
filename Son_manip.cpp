@@ -2,7 +2,7 @@
 #define Son_manip_cpp
 
 //Son code
-void choice_insert_func(){
+void choice_insert_func() {
 	switch(add_choice){
 			case 1 :
 				cout<<"Enter name : "; cin>>name;

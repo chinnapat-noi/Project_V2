@@ -1,1 +1,5 @@
-toothbrush 06/2005 04/2025 45136 useforcleanupyourmouth 30 12 5.0 don'tkeepinhightemperature
+toothbrush 06/2005 04/2025 452136 useforcleanupyourmouth 30 12 5.0 don'tkeepinhightemparature
+shampoo 05/2000 10/2016 843126 cleaninghair 25 16 2.7 don'tstoreinhightemparature
+bodyshower 11/2003 07/2015 bodycleaning 30 19 2.5 don'tstoreinhightemparature
+sunlight 09/2013 03/2020 cleaningtheplate 48 20 10.2 takeawayfromchildren
+softener 08/2014 04/2025 decreaseunpleasantsmell 35 10 4.6 dangerforeating

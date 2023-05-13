@@ -1,10 +1,12 @@
 //All Node related function
 #ifndef NodeLL_cpp
 #define NodeLL_cpp
-#include "NodeLL.h"
+#include <iostream>
 #include "ctime"
+using namespace std;
 
 // <------------- Node ------------->
+#include "NodeLL.h"
 
 /*Node*/
 NODE::NODE(){
@@ -19,7 +21,7 @@ NODE::NODE(){
       cout << "NodeID " << NodeID << " is being deleted" << endl;
       }
 }
-void  NODE:: show_data(){
+void NODE:: show_data(){
      cout << "NodeID @ NODE : " << NodeID << endl;
 }
 
@@ -35,10 +37,10 @@ general::general(string inName, string inmfg, string inexp, long inLotNo):NODE()
 
       // time input
       time_t curr_time;
-	 curr_time = time(NULL);
+	curr_time = time(NULL);
       string realtime = ctime(&curr_time);
       string textDay, day, textMonth, year, hh, mm, ss, time;
-	 if(dev)cout << "Today is : " << realtime; //In this format >> Tue Apr 25 12:31:25 2023
+	if(dev) cout << "Today is : " << realtime; //In this format >> Tue Apr 25 12:31:25 2023
       textDay = textDay + realtime[0] + realtime[1] + realtime[2]; // Tue
       day = day + realtime[8] + realtime[9]; // 25
       textMonth = textMonth + realtime[4] + realtime[5] + realtime[6]; // Apr
@@ -64,7 +66,7 @@ general::general(string inName, string inmfg, string inexp, long inLotNo):NODE()
       cout << "adding updateTime @ general : " << updateTime << endl;
       }
 }
-  general:: ~general(){
+general:: ~general(){
       if(dev){
       cout << "name " << name << " is being deleted" << endl;
       cout << "mfg " << mfg << " is being deleted" << endl;
@@ -112,7 +114,7 @@ food:: ~food(){
       cout << "weightEach " << weightEach << " is being deleted" << endl;
       }
 }
-void  food:: show_data(){
+void food:: show_data(){
       NODE::show_data();
       general::show_data();
       consumable::show_data();
@@ -138,7 +140,7 @@ drinks:: ~drinks(){
       cout << "volumeEach " << volumeEach << " is being deleted" << endl;
       }
 }
-void  drinks:: show_data(){
+void drinks:: show_data(){
       NODE::show_data();
       general::show_data();
       consumable::show_data();
@@ -190,7 +192,7 @@ dailyUse:: ~dailyUse(){
       cout << "details " << details << " is being deleted" << endl;
       }
 }
-void  dailyUse:: show_data(){
+void dailyUse:: show_data(){
       NODE::show_data();
       general::show_data();
       appliance::show_data();
@@ -318,7 +320,7 @@ LLDai::~LLDai(){
 }
 
 void LLDai::show_all(){
-     dailyUse  *t=hol;
+     dailyUse  *t = hol;
      int i;
      cout << endl << "=== Show Linkedlist DailyUse ==" << endl;
      for(i=0;i<size;i++){
@@ -377,6 +379,18 @@ void LLSpec::add_node(specificPurpose *&A){
 //Food
 int food::return_NodeID(){
 	return NodeID;
+}
+
+double food::return_weightAll() {
+      return weightAll;
+}
+
+string food::return_mfg() {
+      return mfg.substr(0,2) + "/" + mfg.substr(3,4);
+}
+
+string food::return_exp() {
+      return exp.substr(0,2) + "/" + exp.substr(3,4);
 }
 
 int LLFood::LLreturn_NodeID(int get_NodeID){
@@ -454,6 +468,22 @@ int drinks::return_NodeID(){
 	return NodeID;
 }
 
+double drinks::return_weightAll() {
+      return weightAll;
+}
+
+double drinks::return_volumeAll() {
+      return volumeEach;
+}
+
+string drinks::return_mfg() {
+      return mfg.substr(0,2) + "/" + mfg.substr(3,4);
+}
+
+string drinks::return_exp() {
+      return exp.substr(0,2) + "/" + exp.substr(3,4);
+}
+
 int LLDrinks::LLreturn_NodeID(int get_NodeID){
 	drinks *t=hol;
 	int out_NodeID = 0;
@@ -462,7 +492,7 @@ int LLDrinks::LLreturn_NodeID(int get_NodeID){
 		if(get_NodeID == out_NodeID) out_NodeID = get_NodeID;
 		else t=t->move_next();
 	}
-      return out_NodeID; //Return 0 for defalut This function need to be run after check_NodeID(NodeID);
+      return out_NodeID; //Return 0 for default This function need to be run after check_NodeID(NodeID);
 }
 
 void drinks::edit_NodeID(int inNodeID){
@@ -527,6 +557,18 @@ void LLDrinks::delete_stock(int inNodeID){
 //Dai
 int dailyUse::return_NodeID(){
 	return NodeID;
+}
+
+double dailyUse::return_weightAll() {
+      return weightAll;
+}
+
+string dailyUse::return_mfg() {
+      return mfg.substr(0,2) + "/" + mfg.substr(3,4);
+}
+
+string dailyUse::return_exp() {
+      return exp.substr(0,2) + "/" + exp.substr(3,4);
 }
 
 int LLDai::LLreturn_NodeID(int get_NodeID){
@@ -604,6 +646,17 @@ int specificPurpose::return_NodeID(){
 	return NodeID;
 }
 
+double specificPurpose::return_weightAll() {
+      return weightAll;
+}
+
+string specificPurpose::return_mfg() {
+      return mfg.substr(0,2) + "/" + mfg.substr(3,4);
+}
+
+string specificPurpose::return_exp() {
+      return exp.substr(0,2) + "/" + exp.substr(3,4);
+}
 int LLSpec::LLreturn_NodeID(int get_NodeID){
 	specificPurpose *t=hol;
 	int out_NodeID = 0;
@@ -671,7 +724,7 @@ void LLSpec::delete_stock(int inNodeID){
 	}
 	delete t;
 	size--;
-	cout<<"NodeID : "<<get_NodeID<<" deleted."<<endl;
+	cout <<"NodeID : " << get_NodeID << " being deleted." << endl;
 }
 
 #endif

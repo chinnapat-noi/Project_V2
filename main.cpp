@@ -37,8 +37,9 @@ void delete_stock(int);
 void show_delete_stock();
 void edit_stock();
 
-
+#include "sorting.cpp"
 #include "Son_manip.cpp"
+
 /////////////////////////////////////////////
 int main(int argc, char **argv){
     clear();
@@ -93,13 +94,22 @@ int main(int argc, char **argv){
     string extra; // use to accept developer's password
     do{
         if(dev) cout << "[!] Developer Mode" << endl;
-        cout << "Please select command" << endl;
-        cout << "1 : Load data" << endl;
-        cout << "2 : Showall" << endl;
-		cout << "3 : Add Delete or Edit stock" << endl;
-        cout << "9 : Exit" << endl;
-        cout << "99 : Then type: \"dev\" to switch developer mode" << endl;
+        cout << "== Please select command ==" << endl;
+        cout << "--> 1 : Load data" << endl;
+        cout << "--> 2 : Showall" << endl;
+		cout << "--> 3 : Add , Delete , Edit your stock" << endl;
+        cout << "--> 4 : Sorting Your Stock " << endl;
+        cout << "--> 9 : Exit" << endl;
+        cout << "--> 99 : Then type: \"dev\" to switch developer mode" << endl;
+
+        user_choices:
         cout << "Input number : "; cin >> choice;
+        if(cin.fail()) {
+            cin.clear();
+            cin.ignore(50,'\n');
+            goto user_choices;
+        }
+
         switch(choice){
             case 1 : //Load data
                 clear();
@@ -170,6 +180,7 @@ int main(int argc, char **argv){
 		
 					}while(s_choice != 4 && s_flag == 0);
 					break;
+            case 4: sorting_function(); break;
             case 99 :
                     cin >> extra;
                     if(extra == "dev") dev = !dev;
@@ -181,7 +192,7 @@ int main(int argc, char **argv){
     return 0;
 }
 
-void clear(){
+void clear() {
 #if defined(__linux__) // Or #if __linux__
   system("clear");
   cout << "[!] This system is running on LINUX" << endl;
