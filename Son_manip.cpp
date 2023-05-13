@@ -240,28 +240,33 @@ void show_delete_stock(){
 	if(add_choice !=5){
 		do{
 			cout<<"Please Enter NodeID you wish to delete"<<endl;
+			cout<<"Enter 0 for Back to main menu"<<endl;
 			cin>>NodeID;
 			
 			if(add_choice==1){
-				if(a.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(a.check_NodeID(NodeID)) {
 					a.delete_stock(NodeID);
 					break;
 				}
 			}
 			else if(add_choice==2){
-				if(b.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(b.check_NodeID(NodeID)) {
 					b.delete_stock(NodeID);
 					break;
 				}
 			}
 			else if(add_choice==3){
-				if(c.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(c.check_NodeID(NodeID)) {
 					c.delete_stock(NodeID);
 					break;
 				}
 			}
 			else{
-				if(d.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(d.check_NodeID(NodeID)) {
 					d.delete_stock(NodeID);
 					break;
 				}
@@ -306,10 +311,12 @@ void edit_stock(){
 	if(add_choice!=5){
 		do{
 			cout<<"Please Enter NodeID you wish to edit"<<endl;
+			cout<<"Enter 0 for Back to main menu"<<endl;
 			cin>>NodeID;
 			
 			if(add_choice==1){
-				if(a.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(a.check_NodeID(NodeID)) {
 					tmpNodeID = a.LLreturn_NodeID(NodeID);
 					a.delete_stock(NodeID);
 					clear();
@@ -319,7 +326,8 @@ void edit_stock(){
 				}
 			}
 			else if(add_choice==2){
-				if(b.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(b.check_NodeID(NodeID)) {
 					tmpNodeID = b.LLreturn_NodeID(NodeID);
 					b.delete_stock(NodeID);
 					clear();
@@ -329,7 +337,8 @@ void edit_stock(){
 				}
 			}
 			else if(add_choice==3){
-				if(c.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(c.check_NodeID(NodeID)) {
 					tmpNodeID = c.LLreturn_NodeID(NodeID);
 					c.delete_stock(NodeID);
 					clear();
@@ -339,7 +348,8 @@ void edit_stock(){
 				}
 			}
 			else{
-				if(d.check_NodeID(NodeID)) {
+				if(NodeID==0) break;
+				else if(d.check_NodeID(NodeID)) {
 					tmpNodeID = d.LLreturn_NodeID(NodeID);
 					d.delete_stock(NodeID);
 					clear();
