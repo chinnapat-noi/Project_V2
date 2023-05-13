@@ -52,7 +52,8 @@ class general:public NODE{
     public:
         general(string = "No Name", string = "No MFG", string = "No EXP", long = 0);
         virtual ~general() = 0;
-        virtual void show_data() = 0;;
+        virtual void show_data() = 0;
+        void inserttonote();
 };
 
 /*consumable: general*/

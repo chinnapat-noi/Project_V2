@@ -188,7 +188,7 @@ int main(int argc, char **argv){
             default : clear();
         }
     }while(choice != 9); //eit program with 9
-
+general.inserttonote();
     return 0;
 }
 

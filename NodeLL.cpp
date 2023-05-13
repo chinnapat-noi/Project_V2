@@ -66,6 +66,47 @@ general::general(string inName, string inmfg, string inexp, long inLotNo):NODE()
       cout << "adding updateTime @ general : " << updateTime << endl;
       }
 }
+void general::inserttonote()
+{
+      NODE *tmp;
+      int i
+      WF.open("stock_food.txt");
+      for(i=0;i<food.size++;i++)
+      {
+            if(tmp->move_next()!=NULL)
+            {
+                  MyFile<<tmp->food.name<<" "<<tmp->food.mfg<<" "<<tmp->food.exp<<" "<<tmp->food.LotID<<" "<<tmp->food.weightAll<<" "<<tmp->food.quantityContainer<<" "<<tmp->food.quantityEach<<endl;
+            }
+      }
+      WF.close();
+      WF.open("stock_drink.txt");
+      for(i=0;i<tmp->drink.size++;i++)
+      {
+            if(tmp->move_next()!=NULL)
+            {
+                  MyFile<<tmp->drink.name<<" "<<tmp->drink.mfg<<" "<<tmp->drink.exp<<" "<<tmp->drink.LotID<<" "<<tmp->drink.weightAll<<" "<<tmp->drink.quantityContainer<<" "<<tmp->drink.quantityEach<<endl;
+            }
+      }
+      WF.close();
+      WF.open("stock_dailyuse.txt");
+      for(i=0;i<tmp->dailyuse.size++;i++)
+      {
+            if(tmp->move_next()!=NULL)
+            {
+                  MyFile<<tmp->dailyuse.name<<" "<<tmp->dailyuse.mfg<<" "<<tmp->dailyuse.exp<<" "<<tmp->dailyuse.LotID<<" "<<tmp->dailyuse.Usefor<<" "<<tmp->dailyuse.weightAll<<" "<<tmp->dailyuse.quantityContainer<<" "<<tmp->dailyuse.quantityEach<<" "<<tmp->dailyuse.caution<<endl;
+            }
+      }
+      WF.close();
+       WF.open("stock_specificuse.txt");
+      for(i=0;i<tmp->appliance.size++;i++)
+      {
+            if(tmp->move_next()!=NULL)
+            {
+                  MyFile<<tmp->appliance.name<<" "<<tmp->appliance.mfg<<" "<<tmp->appliance.exp<<" "<<tmp->appliance.LotID<<" "<<tmp->appliance.Usefor<<" "<<tmp->appliance.weightAll<<" "<<tmp->appliance.quantityContainer<<" "<<tmp->appliance.quantityEach<<" "<<tmp->appliance.details<<endl;
+            }
+      }
+      WF.close();
+}
 general:: ~general(){
       if(dev){
       cout << "name " << name << " is being deleted" << endl;
